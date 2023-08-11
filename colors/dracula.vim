@@ -53,7 +53,7 @@ let s:yellow    = g:dracula#palette.yellow
 
 let s:diffgreen = g:dracula#palette.diffgreen
 let s:diffred = g:dracula#palette.diffred
-let s:diffchange = g:dracula#palette.bglighter
+let s:difftext = g:dracula#palette.difftext
 
 let s:none      = ['NONE', 'NONE']
 
@@ -170,7 +170,8 @@ call s:h('DraculaCyan', s:cyan)
 call s:h('DraculaCyanItalic', s:cyan, s:none, [s:attrs.italic])
 
 call s:h('DraculaGreen', s:green)
-call s:h('DraculaDiffGreen', s:none, s:diffgreen)
+call s:h('DraculaDiffAdd', s:none, s:diffgreen)
+call s:h('DraculaDiffAdded', s:green, s:none)
 call s:h('DraculaGreenBold', s:green, s:none, [s:attrs.bold])
 call s:h('DraculaGreenItalic', s:green, s:none, [s:attrs.italic])
 call s:h('DraculaGreenItalicUnderline', s:green, s:none, [s:attrs.italic, s:attrs.underline])
@@ -212,9 +213,11 @@ if g:dracula_high_contrast_diff
 else
   call s:h('DraculaDiffChange', s:none, s:none)
   call s:h('DraculaDiffDelete', s:red, s:diffred)
+  call s:h('DraculaDiffDeleted', s:red, s:none)
 endif
 
-call s:h('DraculaDiffText', s:none, s:diffchange)
+call s:h('DraculaDiffText', s:none, s:difftext)
+
 
 " }}}2
 
@@ -235,11 +238,11 @@ call s:h('CursorLine', s:none, s:subtle)
 hi! link ColorColumn  DraculaBgDark
 hi! link CursorColumn CursorLine
 hi! link CursorLineNr DraculaYellow
-hi! link DiffAdd      DraculaDiffGreen
-hi! link DiffAdded    DiffAdd
+hi! link DiffAdd      DraculaDiffAdd
+hi! link DiffAdded    DraculaDiffAdded
 hi! link DiffChange   DraculaDiffChange
 hi! link DiffDelete   DraculaDiffDelete
-hi! link DiffRemoved  DiffDelete
+hi! link DiffRemoved  DraculaDiffDeleted
 hi! link DiffText     DraculaDiffText
 hi! link Directory    DraculaPurpleBold
 hi! link ErrorMsg     DraculaRedInverse

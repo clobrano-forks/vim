@@ -41,8 +41,9 @@ let g:dracula#palette.color_13 = '#FF92DF'
 let g:dracula#palette.color_14 = '#A4FFFF'
 let g:dracula#palette.color_15 = '#FFFFFF'
 
-let g:dracula#palette.diffgreen = ['#293a4c', 23 ]
-let g:dracula#palette.diffred = ['#36232c', 1]
+let g:dracula#palette.diffgreen = ['#273732', 23]
+let g:dracula#palette.diffred = ['#362b31', 1]
+let g:dracula#palette.difftext = ['#424450', 238]
 
 " }}}
 
